@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-12">
+        <nav>
+          <ul class="pagination pagination">
+              <li class="page-item">
+                <a href="" class="page-link">
+                    <span>&laquo;</span> 
+                    <span class="sr-only">Anterior</span>   
+                </a>
+              </li>
+              {% for page in paginator.page_range %}              
+              <li{% if page_obj.number == page %} class="active"{% endif %}>              
+                  <a href="?page={{ page }}{{ getvars }}">{{ page }}</a>            
+              </li>
+              <li class="page-item">
+                <a href="" class="page-link">
+                    <span>&raquo;</span>
+                    <span class="sr-only">Próximo</span>
+                </a>    
+              </li>
+              {% endfor %}
+          </ul>
+        </nav>
+    </div>
+</div>

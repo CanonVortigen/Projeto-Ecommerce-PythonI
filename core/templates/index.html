@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+<div class="django-time"> 
+	<title>Date and Time</title>
+	<SCRIPT LANGUAGE="JAVASCRIPT">
+	  var now = new Date();
+	  var mName = now.getMonth() +1 ;
+	  var dName = now.getDay() +1;
+	  var dayNr = now.getDate();
+	  var yearNr=now.getYear();
+	  if(dName==1) {Day = "Domingo";}
+	  if(dName==2) {Day = "Segunda-feira";}
+	  if(dName==3) {Day = "Terça-feira";}
+	  if(dName==4) {Day = "Quarta-feira";}
+	  if(dName==5) {Day = "Quinta-feira";}
+	  if(dName==6) {Day = "Sexta-feira";}
+	  if(dName==7) {Day = "Sábado";}
+	  if(mName==1){Month = "Janeiro";}
+	  if(mName==2){Month = "Fevereiro";}
+	  if(mName==3){Month = "Março";}
+	  if(mName==4){Month = "Abril";}
+	  if(mName==5){Month = "Maio";}
+	  if(mName==6){Month = "Junho";}
+	  if(mName==7){Month = "Julho";}
+	  if(mName==8){Month = "Agosto";}
+	  if(mName==9){Month = "Setembro";}
+	  if(mName==10){Month = "Outubro";}
+	  if(mName==11){Month = "Novembro";}
+	  if(mName==12){Month = "Dezembro";}
+	  if(yearNr < 2000) {Year = 1900 + yearNr;}
+	  else {Year = yearNr;}
+	  var todaysDate =(" " + Day + ", " + dayNr + " de " + Month + " de " + Year);
+	  document.write('  '+todaysDate);
+	</SCRIPT></span> 
+	<SPAN ID="Clock">00:00:00</SPAN>
+  
+	<SCRIPT LANGUAGE="JavaScript">
+	  var Elem = document.getElementById("Clock");
+	  function Horario(){ 
+		var Hoje = new Date(); 
+		var Horas = Hoje.getHours(); 
+		if(Horas < 10){ 
+		  Horas = "0"+Horas; 
+		} 
+		var Minutos = Hoje.getMinutes(); 
+		if(Minutos < 10){ 
+		  Minutos = "0"+Minutos; 
+		} 
+		var Segundos = Hoje.getSeconds(); 
+		if(Segundos < 10){ 
+		  Segundos = "0"+Segundos; 
+		} 
+		Elem.innerHTML = Horas+":"+Minutos+":"+Segundos; 
+		} 
+		window.setInterval("Horario()",1000);
+	</SCRIPT>
+  </div>
+				
+<div id="logo">
+	<h1><a href="">Loja Online</a></h1>
+</div>	
+
+<div class="jumbotron page-header" id="principal"> 	
+	
+	<div id="container"> <!-- Inicio Container -->			
+
+		<div id="principal"> <!-- Inicio Principal -->
+
+			<div id="conteudo">
+				<section id="capa">											
+					<a href="{% url 'catalog:product_list' %}">
+						<img src="/media/products/lojaonline.png">
+					</a>
+				</section>
+				<section id="postagens">						
+
+					<article id="postagem1">
+						<h3>Compre pelo whatsapp</h3>
+						<a href="https://api.whatsapp.com/send?phone=5519999999999&text=Texto%20aqui"
+						target="_blank">
+						<img src="/media/products/whats.jpg" alt="Contato pelo WhatsApp" /></a>
+					</article>
+
+					<article id="postagem1">
+						<h3>Veja nossas ofertas no youtube</h3>
+						<a href="#">
+							<img style="width: 310px; height: 170px;" src="/media/products/youtube.jpg">
+						</a>
+						
+					</article>
+
+					<article id="postagem1">
+						<h3>Produto mais vendido</h3>	
+						<a href="http://localhost:8000/catalogo/product777/">					
+							<img style="width: 310px; height: 170px;" src="/media/products/destaque.jpeg">	
+						</a>					
+					</article>					
+
+					<article id="postagem2">
+						<h3>Conheça nossas promoções</h3>						
+						<a href="http://localhost:8000/catalogo/promotion777/">
+							<img src="/media/products/promocao.jpeg">
+						</a>
+					</article>	
+					
+					<article id="postagem2">
+						<h3>Concorra a um prêmio</h3>
+						<a href="#">
+							<img src="http://placehold.it/310x170">
+						</a>
+					</article>		
+
+					<article id="postagem2">
+						<h3>Deixa seu comentário</h3>
+						<a href="#">
+							<img src="http://placehold.it/310x170">
+						</a>
+					</article>		
+								
+				</section>
+			</div>
+			<aside>
+				<section>					
+					<a href="#">
+						<iframe width="350" height="320" src="https://www.youtube.com/embed/RGUYb-hivrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</a>
+				</section>
+				<section id="galeria">
+					<h4>Novidades no Site</h4>
+					<a href="">
+						<img src="/media/products/imagem1.jpg" height="93" width="93">
+					</a>
+					<a href="">
+						<img src="/media/products/imagem2.jpg" height="93" width="93">
+					</a>
+					<a href="">
+						<img src="/media/products/imagem3.jpg" height="93" width="93">
+					</a>
+					<a href="">
+						<img src="/media/products/imagem4.jpg" height="93" width="93">
+					</a>				
+			
+					<a href="">
+						<img src="/media/products/imagem1.jpg" height="93" width="93">
+					</a>
+					<a href="">
+						<img src="/media/products/imagem2.jpg" height="93" width="93">
+					</a>
+					<a href="">
+						<img src="/media/products/imagem3.jpg" height="93" width="93">
+					</a>
+					<a href="">
+						<img src="/media/products/imagem4.jpg" height="93" width="93">
+					</a>
+				</section>
+			</aside>		
+		</div>	<!-- Fim Principal -->	
+	</div> <!-- Fim Container -->
+
+</div>
+{% endblock %}
